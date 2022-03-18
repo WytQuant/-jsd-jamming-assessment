@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import SearchBar from "../SearchBar/SearchBar"
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
@@ -11,9 +11,14 @@ function App() {
 
   const [trackResults, setTrackResults] = useState([])
 
-  const [ playlistName, setPlaylistName] = useState('New playlist');
+  const [ playlistName, setPlaylistName] = useState('New Playlist');
 
   const [playlistTracks, setPlaylistTracks] = useState([]);
+
+  // componentDidMount
+  useEffect(() => {
+    Spotify.getAccessToken();
+  }, [])
 
   //Add and remove section
   
@@ -44,9 +49,9 @@ function App() {
 
   //Save playlist section
   function savePlaylist() {
-    const trackUris = playlistTracks.map(track => track.uri);
-    Spotify.savePlaylist(playlistName, trackUris).then(() => {
-      setPlaylistName(prevName => (prevName = "New playlist"));
+    const trackURIs = playlistTracks.map(track => track.uri);
+    Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+      setPlaylistName("New playlist");
       setPlaylistTracks([]);
     })
   }
