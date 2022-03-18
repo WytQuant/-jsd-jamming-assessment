@@ -14,4 +14,4 @@ Good luck!
 
 # Completed Jamming Project
 
-[Click here to catch my project](http://wyt.surge.sh)
+[Click here to visit my project](http://wyt.surge.sh)
