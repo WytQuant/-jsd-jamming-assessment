@@ -12,4 +12,6 @@ This is a long project, but we’ll be with you every step of the way. Whether y
 
 Good luck!
 
+# Completed Jamming Project
+
 [Click here to catch my project](http://wyt.surge.sh)
